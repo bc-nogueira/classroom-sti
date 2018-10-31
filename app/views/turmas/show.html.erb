@@ -3,14 +3,18 @@
     <h3><%= "#{@turma.disciplina.nome} - #{@turma.codigo}" %></h3>
   </div>
   <div class="card-body">
-    <div class="d-flex justify-content-between">
-      <span><b>Professor:</b> <%= @turma.professor.nome %></span>
-      <span><b>Período:</b> <%= @turma.periodo %></span>
+    <div class="border rounded p-3">
+      <h4 class="text-center">Informações</h4>
+      <hr>
+      <div class="d-flex justify-content-between">
+        <span><b>Professor:</b> <%= @turma.professor.nome %></span>
+        <span><b>Período:</b> <%= @turma.periodo %></span>
+      </div>
     </div>
     <h4 class="text-center mt-3">Alunos</h4>
     <%= render partial: 'alunos/alunos', locals: { alunos: @turma.alunos } %>
   </div>
   <div class="card-footer text-muted">
-    <%= link_to 'Voltar', turmas_path, class: 'btn btn-secondary' %>
+    <%= link_to 'Voltar', :back, class: 'btn btn-secondary' %>
   </div>
 </div>
