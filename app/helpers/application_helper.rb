@@ -6,8 +6,8 @@ module ApplicationHelper
   end
 
   def professores_para_select(selected = nil)
-    profs_ordenadas = Professor.all.sort_by(&:nome)
-    professores = profs_ordenadas.map { |p| [p.nome, p.id] }
+    profs_ordenados = Professor.all.sort_by(&:nome)
+    professores = profs_ordenados.map { |p| [p.nome, p.id] }
     options_for_select(professores, selected)
   end
 
