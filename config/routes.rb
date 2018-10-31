@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :alunos, only: [:index, :show, :new, :create]
   resources :disciplinas, only: [:index, :new, :create]
   resources :professores, only: [:index, :show, :new, :create]
-  resources :turmas, only: [:index, :show]
+  resources :turmas, only: [:index, :show, :new, :create]
 end
