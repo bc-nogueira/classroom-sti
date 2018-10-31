@@ -10,7 +10,11 @@
   <tbody>
     <% @professores.each do |professor| %>
       <tr>
-        <td><%= professor.nome %></td>
+        <td>
+          <%= link_to professor_path(professor.id) do %>
+            <%= professor.nome %>
+          <% end %>
+        </td>
         <td><%= professor.iduff %></td>
         <td><%= professor.siape %></td>
         <td><%= professor.email %></td>
