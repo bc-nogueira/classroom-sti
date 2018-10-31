@@ -1,6 +1,7 @@
 <div class="card">
-  <div class="card-header">
+  <div class="card-header d-flex justify-content-between">
     <h3>Alunos</h3>
+    <%= link_to 'Criar aluno', new_aluno_path, class: 'btn btn-success' %>
   </div>
   <div class="card-body">
     <%= render partial: 'alunos/alunos', locals: { alunos: @alunos } %>
