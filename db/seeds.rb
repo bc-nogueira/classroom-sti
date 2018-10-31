@@ -14,9 +14,9 @@ gabriel = Aluno.create!({ nome: 'Gabriel', iduff: '11111111111',
 professor = Professor.create!({ nome: 'Leo', iduff: '33333333333',
                                 siape: '11111111', email: 'leo@id.uff.br' })
 
-disciplina = Disciplina.create!({ codigo: 'A1', nome: 'POO' })
+disciplina = Disciplina.create!({ codigo: 'TCC00100', nome: 'POO' })
 
-turma = Turma.create!({ codigo: 'TCC00100', periodo: '20182',
+turma = Turma.create!({ codigo: 'A1', periodo: '20182',
                         professor: professor, disciplina: disciplina })
 
 AlunoTurma.create!({ aluno: breno, turma: turma })
