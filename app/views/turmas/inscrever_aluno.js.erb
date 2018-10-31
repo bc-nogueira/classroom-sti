@@ -1,0 +1,4 @@
+$('#alunosTurma').html("<%= escape_javascript(render partial: 'alunos/alunos',
+           locals: { alunos: @turma.alunos } ) %>");
+
+$('#inscreverAlunoModal').modal('hide');

@@ -18,10 +18,14 @@
     </div>
     <% if @turma.alunos.any? %>
       <h4 class="text-center mt-3">Alunos</h4>
-      <%= render partial: 'alunos/alunos', locals: { alunos: @turma.alunos } %>
+      <div id="alunosTurma">
+        <%= render partial: 'alunos/alunos', locals: { alunos: @turma.alunos } %>
+      </div>
     <% else %>
       <p class="text-center mt-3">A turma não tem alunos inscritos.</p>
     <% end %>
+
+    <%= render 'turmas/inscricao_aluno' %>
   </div>
   <div class="card-footer text-muted">
     <%= link_to 'Voltar', :back, class: 'btn btn-secondary' %>
