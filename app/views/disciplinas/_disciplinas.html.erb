@@ -1,0 +1,16 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Código</th>
+      <th scope="col">Nome</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% disciplinas.each do |disciplina| %>
+      <tr>
+        <td><%= disciplina.codigo %></td>
+        <td><%= disciplina.nome %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

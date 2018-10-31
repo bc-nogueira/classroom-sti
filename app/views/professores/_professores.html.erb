@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">idUFF</th>
+      <th scope="col">Siape</th>
+      <th scope="col">E-mail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @professores.each do |professor| %>
+      <tr>
+        <td><%= professor.nome %></td>
+        <td><%= professor.iduff %></td>
+        <td><%= professor.siape %></td>
+        <td><%= professor.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

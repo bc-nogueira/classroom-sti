@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-header">
+    <h3>Professores</h3>
+  </div>
+  <div class="card-body">
+    <%= render partial: 'professores/professores',
+               locals: { professores: @professores } %>
+  </div>
+  <div class="card-footer text-muted">
+    <%= @professores.size %> professores
+  </div>
+</div>
