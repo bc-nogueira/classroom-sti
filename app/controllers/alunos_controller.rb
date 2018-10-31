@@ -16,6 +16,11 @@ class AlunosController < ApplicationController
     redirect_to aluno_path(@aluno)
   end
 
+  def inscrever_turma
+    @aluno = Aluno.find(params[:id])
+    AlunoTurma.create(aluno_id: params[:id], turma_id:params[:turma_id])
+  end
+
   private
 
   def aluno_params

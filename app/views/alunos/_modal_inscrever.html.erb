@@ -1,0 +1,25 @@
+<div class="modal" tabindex="-1" role="dialog" id="inscreverModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Inscrever aluno em turma</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <%= form_with url: inscrever_turma_aluno_path, remote: true do |f| %>
+        <div class="modal-body text-center">
+          <div class="form-group">
+            <%= f.select :turma_id, turmas_para_select,
+                         { include_blank: 'Selecione a turma' },
+                         required: true, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <%= f.submit 'Inscrever', class: 'btn btn-success ml-3' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
