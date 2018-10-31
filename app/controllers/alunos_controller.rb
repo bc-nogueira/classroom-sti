@@ -1,6 +1,6 @@
 class AlunosController < ApplicationController
   before_action :find_aluno, only: [:show, :inscrever_turma]
-  
+
   def index
     @alunos = Aluno.all
   end
