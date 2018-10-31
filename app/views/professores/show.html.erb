@@ -12,8 +12,12 @@
         <span><b>E-mail:</b> <%= @professor.email %></span>
       </div>
     </div>
-    <h4 class="text-center mt-3">Turmas</h4>
-    <%= render partial: 'turmas/turmas', locals: { turmas: @professor.turmas } %>
+    <% if @professores.turmas.any? %>
+      <h4 class="text-center mt-3">Turmas</h4>
+      <%= render partial: 'turmas/turmas', locals: { turmas: @professor.turmas } %>
+    <% else %>
+      <p class="text-center mt-3">O aluno não dá aula a nenhuma turma.</p>
+    <% end %>
   </div>
   <div class="card-footer text-muted">
     <%= link_to 'Voltar', :back, class: 'btn btn-secondary' %>
