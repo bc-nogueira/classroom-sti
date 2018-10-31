@@ -1,6 +1,7 @@
 <div class="card">
-  <div class="card-header">
+  <div class="card-header d-flex justify-content-between">
     <h3>Disciplinas</h3>
+    <%= link_to 'Criar disciplina', new_disciplina_path, class: 'btn btn-success' %>
   </div>
   <div class="card-body">
     <%= render partial: 'disciplinas/disciplinas',
