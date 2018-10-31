@@ -10,7 +10,11 @@
   <tbody>
     <% alunos.each do |aluno| %>
       <tr>
-        <td><%= aluno.nome %></td>
+        <td>
+          <%= link_to aluno_path(aluno.id) do %>
+            <%= aluno.nome %>
+          <% end %>
+        </td>
         <td><%= aluno.iduff %></td>
         <td><%= aluno.matricula %></td>
         <td><%= aluno.email %></td>
