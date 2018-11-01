@@ -10,7 +10,7 @@
       <%= form_with url: inscrever_turma_aluno_path, remote: true do |f| %>
         <div class="modal-body text-center">
           <div class="form-group">
-            <%= f.select :turma_id, turmas_para_select,
+            <%= f.select :turma_id, turmas_nao_inscrito,
                          { include_blank: 'Selecione a turma' },
                          required: true, class: 'form-control' %>
           </div>

@@ -1,7 +1,7 @@
 module ApplicationHelper
   def alunos_para_insc_turma(selected = nil)
     ordenados = Aluno.all.sort_by(&:nome)
-    nao_inscritos = ordenados.select { |a| a.turma_ids.exclude?(@turma.id) }
+    nao_inscritos = ordenados.select { |a| a.turma_ids.exclude? @turma.id }
     alunos = nao_inscritos.map { |a| [a.nome, a.id] }
     options_for_select(alunos, selected)
   end
@@ -18,8 +18,9 @@ module ApplicationHelper
     options_for_select(professores, selected)
   end
 
-  def turmas_para_select(selected = nil)
-    turmas = Turma.all.map { |t| [t.nome_com_codigo, t.id] }
+  def turmas_nao_inscrito(selected = nil)
+    turmas_nao_insc = Turma.all.select { |t| t.aluno_ids.exclude? @aluno.id }
+    turmas = turmas_nao_insc.map { |t| [t.nome_com_codigo, t.id] }
     options_for_select(turmas, selected)
   end
 end
