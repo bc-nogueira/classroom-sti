@@ -3,19 +3,7 @@
     <h3><%= "#{@turma.disciplina.nome} - #{@turma.codigo}" %></h3>
   </div>
   <div class="card-body">
-    <div class="border rounded p-3">
-      <h4 class="text-center">Informações</h4>
-      <hr>
-      <div class="d-flex justify-content-between">
-        <span>
-          <b>Professor:</b>
-          <%= link_to professor_path(@turma.professor.id) do %>
-            <%= @turma.professor.nome %>
-          <% end %>
-        </span>
-        <span><b>Período:</b> <%= @turma.periodo %></span>
-      </div>
-    </div>
+    <%= render partial: 'turmas/info', locals: { turma: @turma } %>
     <% if @turma.alunos.any? %>
       <h4 class="text-center mt-3">Alunos</h4>
       <div id="alunosTurma">
