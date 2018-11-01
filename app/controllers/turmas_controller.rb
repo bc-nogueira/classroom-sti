@@ -1,5 +1,5 @@
 class TurmasController < ApplicationController
-  before_action :find_turma, only: [:show, :inscrever_aluno]
+  before_action :find_turma, only: [:show, :inscrever_aluno, :alterar_professor]
 
   def index
     @turmas = Turma.all
@@ -18,6 +18,10 @@ class TurmasController < ApplicationController
 
   def inscrever_aluno
     AlunoTurma.create(aluno_id: params[:aluno_id], turma_id:params[:id])
+  end
+
+  def alterar_professor
+    @turma.update({ professor: Professor.find(params[:professor_id]) })
   end
 
   private

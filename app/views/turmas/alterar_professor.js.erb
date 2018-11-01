@@ -1,0 +1,6 @@
+$('#infoTurma').html("<%= escape_javascript(render partial: 'turmas/info',
+           locals: { turma: @turma } ) %>");
+
+$('#alterarProfessorModal').modal('hide');
+$('body').removeClass('modal-open');
+$('.modal-backdrop').remove();

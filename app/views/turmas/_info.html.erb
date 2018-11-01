@@ -2,12 +2,20 @@
   <h4 class="text-center">Informações</h4>
   <hr>
   <div class="d-flex justify-content-between">
-        <span>
-          <b>Professor:</b>
-          <%= link_to professor_path(turma.professor.id) do %>
-            <%= turma.professor.nome %>
-          <% end %>
-        </span>
+    <span>
+      <b>Professor:</b>
+      <%= link_to professor_path(turma.professor.id) do %>
+        <%= turma.professor.nome %>
+      <% end %>
+
+      <button type="button" class="btn btn-outline-primary ml-3" data-toggle="modal"
+              data-target="#alterarProfessorModal">
+        Alterar professor
+      </button>
+
+      <%= render 'turmas/modal_alterar_prof' %>
+
+    </span>
     <span><b>Período:</b> <%= turma.periodo %></span>
   </div>
 </div>

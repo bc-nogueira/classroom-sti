@@ -2,8 +2,10 @@
   <div class="card-header">
     <h3><%= "#{@turma.disciplina.nome} - #{@turma.codigo}" %></h3>
   </div>
-  <div class="card-body">
-    <%= render partial: 'turmas/info', locals: { turma: @turma } %>
+  <div class="card-body" id="teste">
+    <div id="infoTurma">
+      <%= render partial: 'turmas/info', locals: { turma: @turma } %>
+    </div>
     <%= render partial: 'turmas/alunos_da_turma', locals: { turma: @turma } %>
     <%= render 'turmas/inscricao_aluno' %>
   </div>

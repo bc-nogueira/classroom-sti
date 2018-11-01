@@ -19,6 +19,12 @@ module ApplicationHelper
     options_for_select(professores, selected)
   end
 
+  def professores_para_alterar(selected = nil)
+    profs_ordenados = Professor.all.sort_by(&:nome) - [@turma.professor]
+    professores = profs_ordenados.map { |p| [p.nome, p.id] }
+    options_for_select(professores, selected)
+  end
+
   # Procura turmas para o aluno se inscrever
   def turmas_nao_inscrito(selected = nil)
     turmas_nao_insc = Turma.all.select { |t| t.aluno_ids.exclude? @aluno.id }
