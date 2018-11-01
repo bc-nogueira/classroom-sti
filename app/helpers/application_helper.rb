@@ -1,4 +1,5 @@
 module ApplicationHelper
+  # Procura alunos que podem ser inscritos na turma
   def alunos_para_insc_turma(selected = nil)
     ordenados = Aluno.all.sort_by(&:nome)
     nao_inscritos = ordenados.select { |a| a.turma_ids.exclude? @turma.id }
@@ -18,6 +19,7 @@ module ApplicationHelper
     options_for_select(professores, selected)
   end
 
+  # Procura turmas para o aluno se inscrever
   def turmas_nao_inscrito(selected = nil)
     turmas_nao_insc = Turma.all.select { |t| t.aluno_ids.exclude? @aluno.id }
     turmas = turmas_nao_insc.map { |t| [t.nome_com_codigo, t.id] }
