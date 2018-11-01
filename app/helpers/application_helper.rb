@@ -1,7 +1,8 @@
 module ApplicationHelper
-  def alunos_para_select(selected = nil)
-    alunos_ordenados = Aluno.all.sort_by(&:nome)
-    alunos = alunos_ordenados.map { |a| [a.nome, a.id] }
+  def alunos_para_insc_turma(selected = nil)
+    ordenados = Aluno.all.sort_by(&:nome)
+    nao_inscritos = ordenados.select { |a| a.turma_ids.exclude?(@turma.id) }
+    alunos = nao_inscritos.map { |a| [a.nome, a.id] }
     options_for_select(alunos, selected)
   end
 
