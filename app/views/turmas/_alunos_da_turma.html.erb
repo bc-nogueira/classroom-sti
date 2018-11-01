@@ -1,0 +1,8 @@
+<% if turma.alunos.any? %>
+  <h4 class="text-center mt-3">Alunos</h4>
+  <div id="alunosTurma">
+    <%= render partial: 'alunos/alunos', locals: { alunos: turma.alunos } %>
+  </div>
+<% else %>
+  <p class="text-center mt-3">A turma não tem alunos inscritos.</p>
+<% end %>

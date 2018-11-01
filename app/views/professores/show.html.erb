@@ -4,12 +4,8 @@
   </div>
   <div class="card-body">
     <%= render partial: 'professores/info', locals: { professor: @professor } %>
-    <% if @professor.turmas.any? %>
-      <h4 class="text-center mt-3">Turmas</h4>
-      <%= render partial: 'turmas/turmas', locals: { turmas: @professor.turmas } %>
-    <% else %>
-      <p class="text-center mt-3">O professor não dá aula em nenhuma turma.</p>
-    <% end %>
+    <%=  render partial: 'professores/turmas_do_professor',
+                locals: { professor: @professor } %>
   </div>
   <div class="card-footer text-muted">
     <%= link_to 'Voltar', :back, class: 'btn btn-secondary' %>

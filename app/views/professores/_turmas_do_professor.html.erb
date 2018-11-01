@@ -1,0 +1,6 @@
+<% if professor.turmas.any? %>
+  <h4 class="text-center mt-3">Turmas</h4>
+  <%= render partial: 'turmas/turmas', locals: { turmas: professor.turmas } %>
+<% else %>
+  <p class="text-center mt-3">O professor não dá aula em nenhuma turma.</p>
+<% end %>

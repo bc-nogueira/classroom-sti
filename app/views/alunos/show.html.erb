@@ -4,15 +4,7 @@
   </div>
   <div class="card-body">
     <%= render partial: 'alunos/info', locals: { aluno: @aluno } %>
-    <% if @aluno.turmas.any? %>
-      <h4 class="text-center mt-3">Turmas</h4>
-      <div id="turmasAluno">
-        <%= render partial: 'turmas/turmas', locals: { turmas: @aluno.turmas } %>
-      </div>
-    <% else %>
-      <p class="text-center mt-3">O aluno não está inscrito em nenhuma turma.</p>
-    <% end %>
-
+    <%= render partial: 'alunos/turmas_do_aluno', locals: { aluno: @aluno } %>
     <%= render 'alunos/inscricao_em_turma' %>
   </div>
   <div class="card-footer text-muted">
